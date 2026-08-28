@@ -2,7 +2,7 @@
 
 My hands-on journey learning Arduino, ESP32, and embedded hardware from scratch.
 
-## What this is
+## What This Is
 A running log of everything I'm building and learning with Arduino, ESP32,
 sensors, and circuits — code, notes, and small projects as I go, starting
 from zero.
