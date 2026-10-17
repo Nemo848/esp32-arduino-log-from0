@@ -72,5 +72,34 @@ Prints the area and circumference of a circle to the Serial Monitor. The radius 
 ## Example output
 A Circle With Radius of 5.00 Has an area of 78.54 and a Circumference of 31.42
 
+
+## 06 — Potentiometer Voltage Reader (10/04/26)
+Reads the voltage from a potentiometer on GPIO 36 and prints it to the Serial Monitor.
+
+**Concepts:** analogRead, potentiometer (voltage divider), ADC, Serial.print
+
+## What I learned
+- A potentiometer's middle leg outputs a voltage between 0V and 3.3V depending on the knob position
+- analogRead() returns a raw number (0–4095 on the ESP32's 12-bit ADC), not a voltage, so it has to be converted: voltage = reading × 3.3 / 4095
+- Wiring: outer legs go to 3.3V and GND, the middle leg goes to GPIO 36
+- Debugging: trouble placing correct wires to its pins, learned that the 2 legs, one has to go to the 3.3V, and the other goes to GND, while the lone leg goes to its designated pin.
+## Example output
+Raw: 2048 | Voltage: 1.65 V
+
+
+## 07 — Potentiometer-Controlled LED (10/17/26)
+Turning the potentiometer on GPIO 36 controls the LED on GPIO 22, and the voltage reading still prints to the Serial Monitor.
+
+**Concepts:** analogRead, ADC, mapping a reading to an output, LED + resistor, Serial.print, if/else statements
+
+## What I learned
+- Combined the voltage reader from project 06 with an LED output, so the knob position changes what the LED does
+- The LED is wired through a resistor on GPIO 22 to protect it
+- Added if/else statements to make the LED either turn on when values are above 3.0 or turn off when under 3.0
+- Debugging: learned that some GPIO pins are input only, so I had to switch the wirings to make it work.
+
+## Example output
+Raw: 3100 | Voltage: 2.50 V | LED: OFF
+
 ----------------------------------------------------------------------------------
 
