@@ -101,5 +101,17 @@ Turning the potentiometer on GPIO 36 controls the LED on GPIO 22, and the voltag
 ## Example output
 Raw: 3100 | Voltage: 2.50 V | LED: OFF
 
+
+## 08 — For Loop: Two Blinking LEDs (11/01/26)
+
+Uses two for loops to blink a yellow LED on GPIO 23 (2 blinks) and a red LED on GPIO 22 (3 blinks) on the ESP32, repeating forever.
+
+**Concepts:** for loops, loop counter, variables, pinMode, digitalWrite, delay, LED + resistor
+
+### What I learned
+- A for loop has three parts: start, condition, and increment, e.g. for (j = 1; j <= yellowBlink; j = j + 1)
+- Storing pins, blink counts, and delay times in variables means I change one value at the top instead of editing the loop
+- Each LED gets its own loop, so the yellow blinks 2 times, then the red blinks 3 times
+- One counter (j) can be reused for both loops since they run one after the other
 ----------------------------------------------------------------------------------
 
