@@ -113,5 +113,24 @@ Uses two for loops to blink a yellow LED on GPIO 23 (2 blinks) and a red LED on 
 - Storing pins, blink counts, and delay times in variables means I change one value at the top instead of editing the loop
 - Each LED gets its own loop, so the yellow blinks 2 times, then the red blinks 3 times
 - One counter (j) can be reused for both loops since they run one after the other
+
+
+## 09 — Serial Input: User-Controlled Blinks (11/14/26)
+
+Type a number into the Serial Monitor and the red LED on GPIO 23 blinks that many times on the ESP32.
+
+**Concepts:** Serial.begin, Serial.println, Serial.available, Serial.parseInt, while loop, for loop, variables, pinMode, digitalWrite, delay, LED + resistor
+
+### What I learned
+- Serial.available() tells me if the user has typed anything, so a while loop can wait for input
+- Serial.parseInt() reads the number I type and stores it in a variable
+- The for loop count comes from the user (numBlinks) instead of a fixed number
+
+### Debugging
+- A semicolon after the for statement ends the loop early, so the LED only blinked once
+
+### Example output
+How many blinks do you want:
+3  → LED blinks 3 times
 ----------------------------------------------------------------------------------
 
