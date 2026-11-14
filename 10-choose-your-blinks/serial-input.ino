@@ -13,16 +13,21 @@ pinMode(redPin, OUTPUT);
 
 void loop() {
   // put your main code here, to run repeatedly:
-Serial.println (msg);
-while (Serial.available()==0){
-  //Blank so it waits until user types value.
-} 
-numBlinks = Serial.parseInt(); //Will take the value user typed
-for (j=1; j<=numBlinks; j=j+1) {
-  digitalWrite(redPin, HIGH);
-  delay(blinkTime);
-  digitalWrite(redPin, LOW);
-  delay(blinkTime);
+ Serial.println(msg);
+  while (Serial.available() == 0) {
+    // wait for user input
+  }
+  numBlinks = Serial.parseInt();
+  while (Serial.available() > 0) Serial.read();  // clear leftover newline
+
+  Serial.print("You entered: ");
+  Serial.println(numBlinks);
+
+  for (j = 1; j <= numBlinks; j = j + 1) {
+    digitalWrite(redPin, HIGH);
+    delay(blinkTime);
+    digitalWrite(redPin, LOW);
+    delay(blinkTime);
 
 
 }
